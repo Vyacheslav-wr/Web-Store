@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en"xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/css/Register.css}" rel="stylesheet" />
+    <script th:src="@{/js/Register.js}"></script>
+</head>
+<body style="background: linear-gradient(to bottom right, #338A94, #D0D0D0)">
+<a href="/userHomePage">
+    <button class="gradient-button1" style="position: absolute;
+    left: 0px;
+    top: 0px;">Back</button>
+</a>
+<h1 style="text-align: center; color: white">Edit Profile</h1>
+<form action="/claim" method="post" class="login" style="text-align: center" onsubmit="Validate()">
+    <div>Name</div>
+    <input th:value="${user.getFirst_name()}" class="rounded-input" type="text" name="first_name" id="first_name" placeholder="Enter your name" required>
+    <div>Surname</div>
+    <input th:value="${user.getLast_name()}" class="rounded-input" type="text" name="last_name" id="last_name" placeholder="Enter your surname" required>
+    <div>Email</div>
+    <input th:value="${user.getEmail()}" class="rounded-input" type="email" name="email" id="email" placeholder="Enter your email" required>
+    <div>Phone number</div>
+    <input th:value="${user.getPhoneNumber()}" class="rounded-input" type="text" name="phone_Num" id="phone_Num" placeholder="Enter your phone number" required>
+    <div>Login</div>
+    <input  th:value="${user.getLogin()}" class="rounded-input" type="text" name="login" id="login" placeholder="Enter your login" required>
+    <div>Password</div>
+    <input  th:value="${user.getPassword()}" class="rounded-input" type="password" name="password" id="password" placeholder="Enter your password" required>
+    </br>
+    <button class="gradient-button1" type="submit">Edit</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/css/Login.css}" rel="stylesheet" />
+</head>
+<body style="background: linear-gradient(to bottom right, #338A94, #D0D0D0)">
+<form action="/login" method="post" class="login" style="text-align: center">
+    <h1 class="color">Logg in</h1>
+    <div class="color">Login</div>
+    <div>
+    <input class = "rounded-input" type="text" name="login" id="login" placeholder="Enter your login" required>
+    </div>
+    <div class="color">Password</div>
+    <div>
+    <input class ="rounded-input"type="password" name="password" id="password" placeholder="Enter your password" required>
+    </div>
+    <div th:text = "${message}" style="color: red"></div>
+    <button type="submit" class="gradient-button">Log in</button>
+</form>
+
+</body>
+<div style="width: 100%">
+    <a href="/" class="a">
+        <button class="gradient-button">Back</button>
+    </a>
+</div>
+</html>

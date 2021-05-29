@@ -1,0 +1,37 @@
+table {width: 100%; border-collapse: separate; border-spacing: 4px;}
+table thead tr {color: #ffffff; font-weight: bold;}
+table thead tr td {border-radius: 4px 4px 0 0; background: #2e82c3;}
+table tbody tr td {border: 1px solid #2e82c3; border-radius: 4px; background: #cbdfef;}
+table tbody tr td:hover {background: #a2c3dd; transition-duration: 0.2s;}
+
+
+body, html{
+    min-height: 100%;
+    height: 100%;
+}
+
+.rounded-input {
+    padding:10px;
+    border:0;
+    border-radius:10px;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+}
+
+.gradient-button1 {
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    padding: 20px 30px;
+    margin: 10px 20px;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-image: linear-gradient(to right, #9EEFE1 0%, #379AA4 51%, #9EEFE1 100%);
+    background-size: 200% auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+    transition: .5s;
+}
+.gradient-button1:hover {
+    background-position: right center;
+}

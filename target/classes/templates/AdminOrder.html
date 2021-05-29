@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/css/TableStyle.css}" rel="stylesheet" />
+</head>
+<body style="background: linear-gradient(to bottom right, #338A94, #D0D0D0)">
+<a href="/adminHomePage" >
+    <button class="gradient-button1">Back</button>
+</a>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Order Date</th>
+        <th>Customer</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="order: ${orders}">
+        <td th:text="${order.getDate()}"></td>
+        <td th:text="${customerRepo.findById(order.getCustomerID()).orElseThrow().getLogin()}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

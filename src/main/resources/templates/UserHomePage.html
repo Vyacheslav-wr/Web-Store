@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/css/UserHomePage.css}" rel="stylesheet" />
+</head>
+<body style="background: linear-gradient(to bottom right, #338A94, #D0D0D0)">
+<a href="/">
+    <button class="gradient-button">Back</button>
+</a>
+<form class="login" style="text-align: center; position: absolute; top:0px; right:600px;">
+    <h2>Account Information</h2>
+    <p>First Name</p>
+    <input class = "rounded-input" th:value="${user.getFirst_name()}" readonly/>
+    <p>Last Name</p>
+    <input class = "rounded-input" th:value="${user.getLast_name()}" readonly/>
+    <p>Email</p>
+    <input class = "rounded-input" th:value="${user.getEmail()}" readonly/>
+    <p>Phone Number</p>
+    <input class = "rounded-input"th:value="${user.getPhoneNumber()}" readonly/>
+    <p>Login</p>
+    <input class = "rounded-input" th:value="${user.getLogin()}" readonly/>
+    <p>Password</p>
+    <input class = "rounded-input" th:value="${user.getPassword()}" readonly/>
+    <p>State</p>
+    <input class = "rounded-input" th:value="${user.getState()}" readonly/>
+</form>
+<tform>
+    <div>
+        <a th:href="'/productsList/' + ${user.getID()}">
+            <button class="gradient-button" style="position: absolute;
+    right: 170px;
+    top: 0px;">Product List</button>
+        </a>
+    </div>
+    <div>
+        <a th:href="'/orderAction/' + ${user.getID() + '/show'}">
+            <button class="gradient-button" style="position: absolute;
+    right: 0px;
+    top: 0px;">Order List</button>
+        </a>
+    </div>
+    <div>
+        <a th:href="'/edit/' + ${user.getID()}">
+            <button class="gradient-button" style="position: absolute;
+    right: 0px;
+    bottom: 0px;">Edit Profile</button>
+        </a>
+    </div>
+</tform>
+
+</body>
+</html>

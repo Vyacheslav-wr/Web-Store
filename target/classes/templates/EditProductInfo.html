@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/css/EditPage.css}" rel="stylesheet" />
+</head>
+<body style="background: linear-gradient(to bottom right, #338A94, #D0D0D0)">
+<a href="/adminProducts">
+    <button class="gradient-button">Back</button>
+</a>
+<form th:action="'/adminProducts/' + ${product.getID()}" method="post" style="text-align: center">
+    <div>Name</div>
+    <input class = "rounded-input" th:value="${product.getName()}" type="text" name="product_name" id="product_name" placeholder="Enter product name" required>
+    <div>Price</div>
+    <input class = "rounded-input" th:value="${product.getPrice()}" type="number" name="price" id="price" placeholder="Enter price" required>
+    <div>Brand</div>
+    <input class = "rounded-input" th:value="${product.getBrand()}" type="text" name="brand" id="brand" placeholder="Enter brand" required>
+    <div>Quantity</div>
+    <input class = "rounded-input" th:value="${product.getQuantity()}" type="number" name="quantity" id="quantity" placeholder="Enter quantity" required>
+    <div>Category</div>
+    <input class = "rounded-input" th:value="${product.getCategoryID()}" type="number" name="category" id="category" placeholder="Enter category" required>
+    </br>
+    <button type="submit" class="gradient-button">Save</button>
+</form>
+</body>
+</html>

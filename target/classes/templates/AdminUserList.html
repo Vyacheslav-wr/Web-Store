@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/css/TableStyle.css}" rel="stylesheet" />
+</head>
+<body style="background: linear-gradient(to bottom right, #338A94, #D0D0D0)">
+<a href="/adminHomePage">
+    <button  class="gradient-button1">Back</button>
+</a>
+<table border="1" >
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Login</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>State</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+<tr th:each="el : ${users}">
+    <td th:text="${el.getID()}"></td>
+    <td th:text="${el.getEmail()}"></td>
+    <td th:text="${el.getPhoneNumber()}"></td>
+    <td th:text="${el.getLogin()}"></td>
+    <td th:text="${el.getFirst_name()}"></td>
+    <td th:text="${el.getLast_name()}"></td>
+    <td th:text="${el.getState()}"></td>
+    <td>
+        <a th:href="'/action/' + ${el.getID()} + '/delete'">
+            <button>DELETE</button>
+        </a>
+    </td>
+    <td>
+        <a th:href="'/action/' + ${el.getID()} + '/block'">
+            <button>BLOCK</button>
+        </a>
+    </td>
+    <td>
+        <a th:href="'/action/' + ${el.getID()} + '/unblock'">
+            <button>UNBLOCK</button>
+        </a>
+    </td>
+</tr>
+    </tbody>
+</table>
+
+</body>
+</html>
